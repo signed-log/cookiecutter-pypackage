@@ -1,5 +1,4 @@
-.PHONY: clean clean-build clean-pyc clean-test coverage dist docs help install lint lint/flake8
-        {%- if cookiecutter.use_black == 'y' %} lint/black{% endif %}
+.PHONY: clean clean-build clean-pyc clean-test coverage sdist wheel build req-non-dev docs help install lint lint/yapf
 .DEFAULT_GOAL := help
 
 define BROWSER_PYSCRIPT
@@ -48,15 +47,10 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
-lint/flake8: ## check style with flake8
-	flake8 {{ cookiecutter.project_slug }} tests
+lint/yapf: ## check style with flake8
+	yapf -pqr {{ cookiecutter.project_slug }}
 
-{%- if cookiecutter.use_black == 'y' %}
-lint/black: ## check style with black
-	black --check {{ cookiecutter.project_slug }} tests
-{%- endif %}
-
-lint: lint/flake8{%- if cookiecutter.use_black == 'y' %} lint/black{%- endif %} ## check style
+lint: lint/yapf ## check style
 
 test: ## run tests quickly with the default Python
 {%- if cookiecutter.use_pytest == 'y' %}
@@ -92,9 +86,18 @@ servedocs: docs ## compile the docs watching for changes
 release: dist ## package and upload a release
 	twine upload dist/*
 
-dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
+req-non-dev:
+	pipenv requirements > requirements.txt
+	tail -n +2 requirements.txt > requirements.txt
+
+build: req-non-dev sdist wheel
+
+sdist: clean
+	python -m build --sdist
+	ls -l dist
+
+wheel: clean
+	python -m build --wheel
 	ls -l dist
 
 install: clean ## install the package to the active Python's site-packages

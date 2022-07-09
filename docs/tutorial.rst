@@ -97,31 +97,6 @@ Your virtualenv should still be activated. If it isn't, activate it now. Install
     pip install -r requirements_dev.txt
 
 
-Step 5: Set Up Travis CI
-------------------------
-
-`Travis CI com`_ is a continuous integration tool used to prevent integration problems. Every commit to the master branch will trigger automated builds of the application.
-
-Login using your Github credentials. It may take a few minutes for Travis CI to load up a list of all your GitHub repos. They will be listed with boxes to the left of the repo name, where the boxes have an ``X`` in them, meaning it is not connected to Travis CI.
-
-Add the public repo to your Travis CI account by clicking the ``X`` to switch it "on" in the box next to the ``mypackage`` repo. Do not try to follow the other instructions, that will be taken care of next.
-
-In your terminal, your virtualenv should still be activated. If it isn't, activate it now. Run the Travis CLI tool to do your Travis CI setup:
-
-.. code-block:: bash
-
-    travis encrypt --add deploy.password
-
-This will:
-
-* Encrypt your PyPI password in your Travis config.
-* Activate automated deployment on PyPI when you push a new tag to master branch.
-
-See :ref:`travis-pypi-setup` for more information.
-
-.. _`Travis CI com`: https://travis-ci.com/
-
-
 Step 6: Set Up Read the Docs
 --------------------------
 

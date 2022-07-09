@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+
+[dev-packages]
+yapf = "*"
+pre-commit = "*"
+tox = "*"
+tox-pipenv = "*"
+tox-pyenv = "*"
+coverage = "*"
+watchdog = "*"
+bump2version = "*"
+twine = "*"
+build = "*"
+
+{% if cookiecutter.command_line_interface|lower == 'click' -%}
+click = "*"{% endif %}
+{% if cookiecutter.use_pytest == 'y' -%}
+pytest = "*"{% endif %}
+
+[requires]
+python_version = "3"

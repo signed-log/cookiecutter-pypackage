@@ -24,29 +24,13 @@ Features
 --------
 
 * Testing setup with ``unittest`` and ``python setup.py test`` or ``pytest``
-* Travis-CI_: Ready for Travis Continuous Integration testing
-* Tox_ testing: Setup to easily test for Python 3.6, 3.7, 3.8
+* Tox_ testing: Setup to easily test for Python 3.7, 3.8, 3.9, 3.10, pypy 3.9
 * Sphinx_ docs: Documentation ready for generation with, for example, `Read the Docs`_
 * bump2version_: Pre-configured version bumping with a single command
 * Auto-release to PyPI_ when you push a new tag to master (optional)
 * Command line interface using Click (optional)
 
 .. _Cookiecutter: https://github.com/cookiecutter/cookiecutter
-
-Build Status
--------------
-
-Linux:
-
-.. image:: https://img.shields.io/travis/audreyfeldroy/cookiecutter-pypackage.svg
-    :target: https://travis-ci.org/audreyfeldroy/cookiecutter-pypackage
-    :alt: Linux build status on Travis CI
-
-Windows:
-
-.. image:: https://ci.appveyor.com/api/projects/status/github/audreyr/cookiecutter-pypackage?branch=master&svg=true
-    :target: https://ci.appveyor.com/project/audreyr/cookiecutter-pypackage/branch/master
-    :alt: Windows build status on Appveyor
 
 Quickstart
 ----------
@@ -63,11 +47,8 @@ Generate a Python package project::
 Then:
 
 * Create a repo and put it there.
-* Add the repo to your Travis-CI_ account.
 * Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``)
 * Register_ your project with PyPI.
-* Run the Travis CLI command ``travis encrypt --add deploy.password`` to encrypt your PyPI password in Travis config
-  and activate automated deployment on PyPI when you push a new tag to master branch.
 * Add the repo to your `Read the Docs`_ account + turn on the Read the Docs service hook.
 * Release your package by pushing a new tag to master.
 * Add a ``requirements.txt`` file that specifies the packages you will need for

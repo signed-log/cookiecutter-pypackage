@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+
+
+[dev-packages]
+yapf = "*"
+pre-commit = "*"
+cookiecutter = ">=2.1.0"
+pytest = "*"
+tox = "*"
+tox-pipenv = "*"
+tox-pyenv = "*"
+
+[requires]
+python_version = "3"
