@@ -11,9 +11,11 @@ yapf = "*"
 pre-commit = "*"
 cookiecutter = ">=2.1.0"
 pytest = "*"
+click = "*"
 tox = "*"
 tox-pipenv = "*"
 tox-pyenv = "*"
+"rstcheck[sphinx]" = "*"
 
 [requires]
 python_version = "3"

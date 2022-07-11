@@ -1,17 +1,6 @@
 PyPI Release Checklist
 ======================
 
-Before Your First Release
--------------------------
-
-#. Register the package on PyPI:
-
-    .. code-block:: bash
-
-        python setup.py register
-
-#. Visit PyPI to make sure it registered.
-
 For Every Release
 -------------------
 
@@ -30,11 +19,11 @@ For Every Release
 
         bump2version minor
 
-#. Install the package again for local development, but with the new version number:
+#. Build the package
 
     .. code-block:: bash
 
-        python setup.py develop
+        make build
 
 #. Run the tests:
 
@@ -48,24 +37,23 @@ For Every Release
 
         git push
 
-#. Push the tags, creating the new release on both GitHub and PyPI:
+#. Push the tags, creating the new release on GitHub:
 
     .. code-block:: bash
 
         git push --tags
 
+#. Push the package to PyPi:
+
+    .. code-block:: bash
+
+        python3 -m twine upload dist/*
+
 #. Check the PyPI listing page to make sure that the README, release notes, and roadmap display properly. If not, try one of these:
 
-    #. Copy and paste the RestructuredText into http://rst.ninjs.org/ to find out what broke the formatting.
+    Run ``rstcheck`` to check the formatting
 
-    #. Check your long_description locally:
-
-        .. code-block:: bash
-
-            pip install readme_renderer
-            python setup.py check -r -s
-
-#. Edit the release on GitHub (e.g. https://github.com/audreyr/cookiecutter/releases). Paste the release notes into the release's release page, and come up with a title for the release.
+#. Edit the release on GitHub (e.g. https://github.com/signed-log/cookiecutter/releases). Paste the release notes into the release's release page, and come up with a title for the release.
 
 About This Checklist
 --------------------

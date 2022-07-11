@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 
 PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)

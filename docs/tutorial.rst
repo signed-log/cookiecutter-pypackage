@@ -4,7 +4,7 @@ Tutorial
 .. note:: Did you find any of these instructions confusing? `Edit this file`_
           and submit a pull request with your improvements!
 
-.. _`Edit this file`: https://github.com/audreyfeldroy/cookiecutter-pypackage/blob/master/docs/tutorial.rst
+.. _`Edit this file`: https://github.com/signed-log/cookiecutter-pipenv/blob/master/docs/tutorial.rst
 
 To start with, you will need a `GitHub account`_ and an account on `PyPI`_. Create these before you get started on this tutorial. If you are new to Git and GitHub, you should probably spend a few minutes on some of the tutorials at the top of the page at `GitHub Help`_.
 
@@ -16,32 +16,11 @@ To start with, you will need a `GitHub account`_ and an account on `PyPI`_. Crea
 Step 1: Install Cookiecutter
 ----------------------------
 
-First, you need to create and activate a virtualenv for the package project. Use your favorite method, or create a virtualenv for your new package like this:
-
-.. code-block:: bash
-
-    virtualenv ~/.virtualenvs/mypackage
-
-Here, ``mypackage`` is the name of the package that you'll create.
-
-Activate your environment:
-
-.. code-block:: bash
-
-    source bin/activate
-
-On Windows, activate it like this. You may find that using a Command Prompt window works better than gitbash.
-
-.. code-block:: powershell
-
-    > \path\to\env\Scripts\activate
-
-
 Install cookiecutter:
 
 .. code-block:: bash
 
-    pip install cookiecutter
+    pip install --user cookiecutter
 
 
 Step 2: Generate Your Package
@@ -49,11 +28,11 @@ Step 2: Generate Your Package
 
 Now it's time to generate your Python package.
 
-Use cookiecutter, pointing it at the cookiecutter-pypackage repo:
+Use cookiecutter, pointing it at the cookiecutter-pipenv repo:
 
 .. code-block:: bash
 
-    cookiecutter https://github.com/audreyfeldroy/cookiecutter-pypackage.git
+    cookiecutter https://github.com/signed-log/cookiecutter-pipenv.git
 
 You'll be asked to enter a bunch of values to set the package up.
 If you don't know what to enter, stick with the defaults.
@@ -88,14 +67,19 @@ You'll need a ssh key to push the repo. You can `Generate`_ a key or `Add`_ an e
 Step 4: Install Dev Requirements
 --------------------------------
 
-You should still be in the folder containing the ``requirements_dev.txt`` file.
+You should still be in the folder containing the ``Pipfile``.
 
-Your virtualenv should still be activated. If it isn't, activate it now. Install the new project's local development requirements:
+Install the new project's local development requirements:
 
 .. code-block:: bash
 
-    pip install -r requirements_dev.txt
+     pipenv install --dev
 
+Enter into the environnment
+
+.. code-block:: bash
+
+     pipenv shell
 
 Step 6: Set Up Read the Docs
 --------------------------
@@ -134,7 +118,7 @@ When you are ready, release your package the standard Python way.
 
 See `PyPI Help`_ for more information about submitting a package.
 
-Here's a release checklist you can use: https://github.com/audreyfeldroy/cookiecutter-pypackage/blob/master/docs/pypi_release_checklist.rst
+Here's a release checklist you can use: https://github.com/signed-log/cookiecutter-pipenv/blob/master/docs/pypi_release_checklist.rst
 
 .. _`PyPI`: https://pypi.python.org/pypi
 .. _`PyPI Help`: https://pypi.org/help/#publishing
@@ -145,4 +129,4 @@ Having problems?
 
 Visit our :ref:`troubleshooting` page for help. If that doesn't help, go to our `Issues`_ page and create a new Issue. Be sure to give as much information as possible.
 
-.. _`Issues`: https://github.com/audreyfeldroy/cookiecutter-pypackage/issues
+.. _`Issues`: https://github.com/signed-log/cookiecutter-pipenv/issues

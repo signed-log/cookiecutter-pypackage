@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/audreyr/cookiecutter-pypackage/issues
+Report bugs at https://github.com/signed-log/cookiecutter-pipenv/issues
 
 If you are reporting a bug, please include:
 
@@ -44,7 +44,7 @@ Submit Feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at
-https://github.com/audreyr/cookiecutter-pypackage/issues.
+https://github.com/signed-log/cookiecutter-pipenv/issues.
 
 If you are proposing a new feature:
 
@@ -56,11 +56,11 @@ If you are proposing a new feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `cookiecutter-pypackage` for local
+Ready to contribute? Here's how to set up ``cookiecutter-pipenv`` for local
 development. Please note this documentation assumes you already have
-`virtualenv` and `Git` installed and ready to go.
+``pipenv`` and ``Git`` installed and ready to go.
 
-1. Fork the `cookiecutter-pypackage` repo on GitHub.
+1. Fork the ``cookiecutter-pipenv`` repo on GitHub.
 
 ::
 
@@ -68,25 +68,25 @@ development. Please note this documentation assumes you already have
 
    .. code-block:: bash
 
-    $ cd path_for_the_repo
-    $ git clone git@github.com:YOUR_NAME/cookiecutter-pypackage.git
+    cd path_for_the_repo
+    git clone git@github.com:YOUR_NAME/cookiecutter-pipenv.git
 
 ::
 
-3. Assuming you have virtualenv installed (If you have Python 3.6 this should
+3. Assuming you have ``pipenv`` installed (If you have Python 3.6 this should
    already be there), you can create a new environment for your local
    development by typing:
 
    .. code-block:: bash
 
-        $ virtualenv cookiecutter-pypackage-env
-        $ source cookiecutter-pypackage-env/bin/activate
+        pipenv install --dev
+        pipenv shell
 
    This should change the shell to look something like:
 
    .. code-block:: bash
 
-        (cookiecutter-pypackage-env) $
+        (cookiecutter-pipenv) $
 
 ::
 
@@ -100,27 +100,24 @@ development. Please note this documentation assumes you already have
 
 ::
 
-5. When you're done making changes, check that your changes pass flake8. Since,
-   this package contains mostly templates the flake should be run for tests
-   directory:
+5. When you're done making changes, check that your changes pass ``pre-commit``. You will need to install it:
 
    .. code-block:: bash
 
-        $ flake8 ./tests
+        pre-commit install
 
 ::
 
-6. The next step would be to run the test cases. `cookiecutter-pypackage` uses
+6. The next step would be to run the test cases. ``cookiecutter-pipenv`` uses
    pytest, you can run PyTest. Before you run pytest you should ensure all
    dependencies are installed:
 
    .. code-block:: bash
 
-        $ pip install -rrequirements_dev.txt
         $ pytest ./tests
 
    If you get any errors while installing cryptography package (something like
-   `#include <openssl/aes.h>`). Please update your pip version and try again:
+   ``#include <openssl/aes.h>``). Please update your pip version and try again:
 
    .. code-block:: bash
 
@@ -135,9 +132,6 @@ development. Please note this documentation assumes you already have
    .. code-block:: bash
 
         $ tox
-
-   If you are missing flake8, pytest and/or tox, just `pip install` them into
-   your virtualenv.
 
 ::
 
@@ -171,10 +165,6 @@ Before you submit a pull request, check that it meets these guidelines:
    new functionality into a function with a docstring, and add the feature to
    the list in README.rst.
 
-3. The pull request should work for Python 3.6 and 3.7, 3.8 and for PyPy. Check
-   https://travis-ci.org/audreyr/cookiecutter-pypackage/pull_requests and
-   make sure that the tests pass for all supported Python versions.
-
 Add a New Test
 --------------
 
@@ -184,7 +174,7 @@ focus on one tiny bit of functionality and prove changes are correct.
 
 To write and run your new test, follow these steps:
 
-1. Add the new test to `tests/test_bake_project.py`. Focus your test on the
+1. Add the new test to ``tests/test_bake_project.py``. Focus your test on the
    specific bug or a small part of the new feature.
 
 ::
@@ -230,7 +220,6 @@ To write and run your new test, follow these steps:
 6. Rerun your test and confirm that your test passes. If it passes,
    congratulations!
 
-.. cookiecutter: https://github.com/audreyr/cookiecutter-pypackage
+.. cookiecutter: https://github.com/signed-log/cookiecutter-pipenv
 .. virtualenv: https://virtualenv.pypa.io/en/stable/installation
 .. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-

@@ -17,6 +17,7 @@ watchdog = "*"
 bump2version = "*"
 twine = "*"
 build = "*"
+"rstcheck[sphinx]" = "*"
 
 {% if cookiecutter.command_line_interface|lower == 'click' -%}
 click = "*"{% endif %}
@@ -25,3 +26,4 @@ pytest = "*"{% endif %}
 
 [requires]
 python_version = "3"
+
